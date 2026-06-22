@@ -1,123 +1,186 @@
 {
   "_artifact": "resume",
-  "_assignment": "INFO 7375 Exercise 1 — brand/ personal layer",
+  "_assignment": "INFO 7375 Exercise 1 — brand/ personal layer (Kanishk Singh)",
+  "_principle": "Extraction is fluent; I am the source of truth. The agent extracted from two documents; the attestation below is mine.",
   "_sources": {
-    "cv": "pasted CV / résumé (Nik Bear Brown)",
-    "li": "pasted LinkedIn profile export"
+    "cv": "Kanishk-Singh-Resume-SDE-New.pdf — tailored SDE résumé (1 page)",
+    "li": "Profile.pdf — LinkedIn profile export (2 pages)"
   },
   "_label_key": {
     "[agree]": "same in CV and LinkedIn",
-    "[cv-only]": "single source: CV",
-    "[li-only]": "single source: LinkedIn",
-    "[CONFLICT]": "sources disagree — human must resolve",
-    "[Unverifiable]": "needs a document (diploma, etc.) to attest",
-    "[drift]": "point-in-time metric, excluded from the durable record"
+    "[cv-only]": "single source: CV résumé",
+    "[li-only]": "single source: LinkedIn export",
+    "[CONFLICT]": "sources disagree — resolved in attestation, or flagged for human gate",
+    "[Unverifiable]": "needs a document (diploma, offer letter) to attest",
+    "[drift]": "point-in-time metric — excluded from the durable record"
   },
   "_human_gate": [
     "identity.canonical_email",
-    "education[].status_when_CONFLICT_or_Unverifiable",
-    "issues[].resolution"
+    "education[BTech].dates (pending diploma)",
+    "skills[].self_rating (lives in private-reflection.md, never here)"
   ],
 
   "identity": {
-    "name": "Nik Bear Brown",
-    "name_variants_seen": ["Nik Bear Brown", "N. B. Brown", "Brown, N. B.", "Brown, N.", "Nik Bear (Nerd, Poet, Lyricist, Doodler, PhD, MBA) Brown"],
-    "pronouns": "They/Them  [li-only]",
-    "headline": "Associate Teaching Professor, AI & Machine Learning — Northeastern University",
+    "name": "Kanishk Singh",
+    "headline": "MS Information Systems @ Northeastern · Full-stack & mobile software engineer (React / React Native / Flutter · Java / Node backend)",
     "location": "Boston, Massachusetts, United States  [agree]",
-    "canonical_email": null,
-    "emails_seen": ["ni.brown@neu.edu  [li-only, featured post]", "bear@bearbrown.co  [session]"],
+    "canonical_email": "singh.kanish@northeastern.edu",
+    "emails_seen": [
+      "singh.kanish@northeastern.edu  [cv — chosen as brand contact]",
+      "singhkanishk1999@gmail.com  [li — personal, not the brand contact]"
+    ],
+    "phone": "(617) 908-0276  [cv-only]",
     "links": {
-      "linkedin": "linkedin.com/in/nikbearbrown",
-      "github": "github.com/nikbearbrown",
-      "website": "nikbearbrown.com",
-      "substack": "https://www.skepticism.ai/"
+      "linkedin": "linkedin.com/in/kanishk11",
+      "github": "github.com/Kanishk0507",
+      "portfolio": "kanishk-personalportfolio.netlify.app"
     }
   },
 
   "education": [
-    { "degree": "PhD, Computer Science", "school": "UCLA", "years": "2003–2013",
-      "field_note": "CV: 'Computer Science'. LinkedIn degree label: 'Mathematics and Computer Science'. LinkedIn text: major field 'computational and systems biology', minors AI + statistics.",
-      "status": "[CONFLICT] — pick one canonical description" },
-    { "degree": "MS, Computer Science", "school": "UCLA",
-      "status": "[cv-only] — not in LinkedIn's 3 listed educations" },
-    { "degree": "MS, Information Design and Data Visualization", "school": "Northeastern University", "years": "2019–2021", "gpa": "3.7",
-      "status": "[agree]" },
-    { "degree": "MBA", "school": "Northeastern University, Boston",
-      "status": "[cv-only][Unverifiable] — claimed in CV and in LinkedIn name tag, but not in LinkedIn's education section" },
-    { "degree": "BA, Biochemistry and Molecular Biology", "school": "UC Santa Cruz",
-      "field_note": "CV: 'Biochemistry and Molecular Biology — UC Santa Cruz'. LinkedIn text: 'BA in Molecular Biology and Biochemistry' (no school given).",
-      "status": "[CONFLICT] — school single-sourced (UCSC, CV only); word order differs" }
+    {
+      "degree": "MS, Information Systems",
+      "school": "Northeastern University, Boston, MA",
+      "start": "2024-09", "end": "2026-12",
+      "gpa": "3.53  [cv-only]",
+      "status": "[agree] — in progress"
+    },
+    {
+      "degree": "BTech, Information Technology",
+      "school": "Dharmsinh Desai University",
+      "start": "2017-08", "end": "2023-05",
+      "note": "The ~5.8-year span is real: Kanishk took a break during the degree and worked in industry in that gap — the DishaSoft 2018–2019 role falls inside this window, so the timeline is consistent. Confirmed 2026-06-22.",
+      "status": "[li-only] — confirmed by attestation 2026-06-22. The SDE résumé omitted this degree entirely (import error #3); restored here."
+    }
   ],
 
   "experience": [
-    { "title": "Associate Teaching Professor", "org": "Northeastern University, College of Engineering", "start": "2022-05", "end": "present", "status": "[agree]" },
-    { "title": "Affiliated / Affiliate Faculty", "org": "Institute for Experiential AI, Northeastern", "start": "2022-12", "end": "present", "status": "[agree]" },
-    { "title": "Founder & Executive Director", "org": "Humanitarians AI Inc. (501(c)(3))", "start": "2019", "end": "present", "status": "[agree]" },
-    { "title": "Assistant Teaching Professor", "org": "Northeastern University, College of Engineering", "start": "2017", "end": "2022", "status": "[cv-only]" },
-    { "title": "Lecturer", "org": "Northeastern University, College of Computer Science", "start": "2013", "end": "2017", "status": "[agree]" },
-    { "title": "Founding Partner & Faculty Mentor", "org": "Northeastern AI Skunkworks", "start": "2019", "end": "present", "status": "[agree]" },
-    { "title": "various founder/CEO/CTO roles", "org": "Bear Brown and Company; Abecedarian; NikBearBrown.com; Musinique LLC", "start": "2021", "end": "present",
-      "status": "[CONFLICT] — overlapping self-employed timelines + two CV entries contain an editorial complaint about Massachusetts that must NOT enter a brand artifact" }
-  ],
-
-  "selected_publications": [
-    { "cite": "Avasthi, R., Lu, Z., Brown, N. B. 'Deep learning and alignment of spatially resolved single-cell transcriptomes with Tangram.' Nature Methods 18, 1352–1362 (2021).", "status": "[cv-only]" },
-    { "cite": "Gultepe, E., Valluru, R., Brown, N. B., Sridhar, S. 'The Landscape of Nanomedical Clinical Trials.' Nano Today 66, 102898 (Feb 2026).", "status": "[cv-only]" },
-    { "cite": "Issak, A. A., et al. 'Mapping the Typographic Latent Space of Digits.' ICLR 2023.", "status": "[cv-only]" },
-    { "_note": "author name appears as both 'Brown, N. B.' and 'Brown, N.' — normalize before publishing" }
-  ],
-
-  "projects": {
-    "_status": "SAMPLE — 3 of 100s built; full catalog imported later (live demo).",
-    "_why_it_matters": "This is the proof engine for the two PRIMARY brand.yml attributes (builds adopted tools / reproducible interactive research). A tool counts as a COSTLY signal only when adoption + reproducibility are evidenced — so every entry carries those fields, null until captured. Don't paste 100 names; import 100 with their proof.",
-    "_import_template": {
-      "name": "", "what": "", "repo": "", "live_url": "",
-      "adoption": { "users": null, "deployments": null, "stars": null, "status": "[Unverifiable — capture]" },
-      "reproducible": { "runnable_artifact": false, "paper": null },
-      "status": ""
+    {
+      "title": "Software Engineer (Mobile, Web & AI)",
+      "org": "Savor",
+      "location": "United States",
+      "start": "2026-01", "end": "2026-05",
+      "stack": ["React Native", "TypeScript", "Node.js", "Express", "PostgreSQL", "LLM APIs", "embeddings", "RAG", "MCP"],
+      "highlights": [
+        "Built mobile features in React Native + TypeScript for a memory app; reduced memory-capture time ~40% and app load to under 2s. [cv]",
+        "Contributed to AI-powered semantic search (LLM APIs + embeddings + retrieval); ~85%+ relevance across 10K+ test queries via evals. [cv]",
+        "Built Node/Express/PostgreSQL backend integrations implementing MCP for context retrieval; ~35% lower API latency at 99.5% uptime. [cv]",
+        "Built social features driving ~25% DAU increase and ~3x session duration across iOS/Android. [cv]"
+      ],
+      "status": "[agree] — headline differs slightly (LI: 'Software Engineer (Mobile, Web & AI)'; CV: 'Software Engineer · React Native, TypeScript, Node.js, AI/NLP'); kept LI form as canonical title"
     },
-    "items": [
-      { "name": "Tangram", "what": "Open-source single-cell spatial mapping tool — the paper-plus-runnable EXEMPLAR.",
-        "repo": "open-source (squidpy / Tangram)",
-        "adoption": { "users": "widely used in spatial transcriptomics", "stars": null, "status": "[cv-only] — capture real install/citation counts" },
-        "reproducible": { "runnable_artifact": true, "paper": "Nature Methods 18, 1352–1362 (2021)" },
-        "status": "EXEMPLAR — the template every project should aim at: a paper you can run" },
-      { "name": "Madison Framework", "what": "Open-source agent-based marketing intelligence framework; core infra for INFO 7375.",
-        "repo": "github.com/nikbearbrown/INFO-7375-Branding-and-AI",
-        "adoption": { "users": null, "deployments": null, "stars": null, "status": "[Unverifiable — capture]" },
-        "reproducible": { "runnable_artifact": true, "paper": null },
-        "status": "[cv-only]" },
-      { "name": "Jobsekr (jobsekr.app)", "what": "Job aggregation platform for OPT/H-1B students.", "live_url": "jobsekr.app",
-        "adoption": { "listings": "65,000+ [CONFLICT]", "companies": "1,600+ vs '30K+ mapped' [CONFLICT]", "status": "[CONFLICT] — reconcile / label as different measures" },
-        "reproducible": { "runnable_artifact": true, "paper": null },
-        "status": "[CONFLICT]" },
-      { "name": "Course bots (Ada, Newton, Grace…)", "what": "25+ AI course assistants deployed across NEU courses.",
-        "adoption": { "deployments": "25+ [cv-only]", "users": null, "status": "[Unverifiable — capture]" },
-        "reproducible": { "runnable_artifact": true, "paper": null },
-        "status": "[cv-only]" }
-    ]
-  },
-
-  "awards": [
-    { "name": "Dean's Award, College of Engineering, Northeastern", "year": "2024–25", "status": "[cv-only]" },
-    { "name": "RISE Award, Computer and Information Sciences", "year": "2022", "status": "[cv-only]" }
+    {
+      "title": "Mobile Application Developer",
+      "title_on_li": "Jr. Flutter Developer",
+      "org": "BlueBox Infosoft Pvt. Ltd.",
+      "location": "Vadodara, India",
+      "start": "2023-10", "end": "2024-07",
+      "stack": ["Flutter", "Dart", "Firebase", "Java", "SQL", "Git"],
+      "highlights": [
+        "Built/owned 5+ cross-platform mobile apps in Flutter — UI/UX, backend integration, release readiness. [cv]",
+        "Cut app startup/screen-load times ~30% via lazy loading, state management, performance profiling. [cv]",
+        "Optimized Java/Firebase/SQL backend services with caching + query refactoring; ~25% faster API responses. [cv]"
+      ],
+      "status": "[CONFLICT → resolved by attestation 2026-06-22: import error #2] — Kanishk confirms the canonical title is 'Mobile Application Developer'; the LinkedIn export's 'Jr. Flutter Developer' is the stale/mismatched label the import surfaced, not the truth."
+    },
+    {
+      "title": "Software Engineer Intern",
+      "title_on_cv": "Software Developer Intern",
+      "org": "Tridhya Tech Limited",
+      "location": "Ahmedabad, Gujarat, India",
+      "start": "2022-12", "end": "2023-05",
+      "stack": ["Java", "Spring Boot", "Liferay", "React.js", "JSP", "Servlets", "SQL"],
+      "highlights": [
+        "Built responsive UIs (JSP/Servlets/HTML/CSS) across 3+ internal platforms. [cv]",
+        "Managed/enhanced 3+ Liferay portals; optimized SQL + modular components for ~35% performance gain. [cv]",
+        "Debugged production issues and shipped features with senior devs in an Agile environment. [cv]"
+      ],
+      "status": "[agree] — minor title wording differs (LI 'Engineer' / CV 'Developer'); kept 'Intern' role"
+    },
+    {
+      "title": "Software Engineer",
+      "title_on_cv": "Software Developer",
+      "org": "DishaSoft",
+      "org_on_li": "Stealth Startup",
+      "location": "India",
+      "start": "2018-08", "end": "2019-10",
+      "stack": ["Java", "Spring Boot", "Spring Cloud", "AWS", "Docker", "React.js"],
+      "highlights": [
+        "Architected scalable microservices (Java/Spring Boot/Spring Cloud); ~40% higher system throughput. [cv]",
+        "Containerized services with Docker on AWS; ~20% fewer deployment failures / env inconsistencies. [cv]",
+        "Centralized logging/monitoring (Spring Actuator + CloudWatch) over 100+ metrics; ~35% faster incident response. [cv]"
+      ],
+      "status": "[CONFLICT → resolved: import error #1] — LI labels this 'Stealth Startup' (a LinkedIn placeholder, not a company name); the real employer is 'DishaSoft' (CV). Canonical = DishaSoft."
+    }
   ],
 
-  "skills_top": ["Python", "Deep Learning", "Machine Learning", "Data Visualization", "Prompt Engineering"],
+  "projects": [
+    {
+      "name": "AI-Powered Voice Analytics & Visualization",
+      "what": "Real-time voice analytics: Deepgram STT + OpenAI APIs for sentiment/keyword extraction; audio-reactive p5.js visualizations; WebSocket + REST streaming backend.",
+      "dates": "2025-08 → 2025-09",
+      "repo": "[TODO DATA SOURCE: link the public repo]",
+      "live_url": null,
+      "stack": ["Deepgram", "OpenAI API", "p5.js", "WebSockets", "REST"],
+      "status": "[cv-only]"
+    },
+    {
+      "name": "Cloud-Native Auto-Scaling Infrastructure",
+      "what": "Automated image builds/deploys (Packer + ASG + GitHub Actions, ~95% less downtime); KMS encryption across RDS/S3/EBS; horizontally scalable, 3x baseline traffic at zero downtime in load tests.",
+      "dates": "2025-05 → 2025-07",
+      "repo": "[TODO DATA SOURCE: link the public repo]",
+      "live_url": null,
+      "stack": ["AWS", "Packer", "ASG", "GitHub Actions", "KMS"],
+      "status": "[cv-only]"
+    }
+  ],
+
+  "skills": {
+    "_note": "Self-ratings (1–5) and any 'inferred from a course I barely passed' admissions live in brand/private-reflection.md (gitignored), never here.",
+    "languages": ["Java", "TypeScript", "Python", "C++", "JavaScript", "Dart", "Swift"],
+    "frameworks": ["ReactJS", "React Native", "Node.js", "Flutter", "Spring Boot", "Tailwind CSS", "Framer Motion", "Liferay"],
+    "databases": ["MySQL", "PostgreSQL", "MongoDB", "Firebase Realtime DB", "DynamoDB", "AWS RDS", "MS SQL Server"],
+    "cloud_devops": ["AWS (EC2, S3, Lambda, IAM, CloudWatch, RDS, EBS)", "Google Cloud Platform", "Docker", "GitHub Actions (CI/CD)"],
+    "tools_testing": ["Git", "GitHub", "Jira", "Postman", "Azure Data Studio", "JUnit", "Mockito", "XCTest", "Agile/Scrum"],
+    "ai_ml": ["WebSocket streaming", "LangChain", "Embeddings", "Vector Search", "RAG", "MCP", "evals"],
+    "li_top_skills": ["React Native", "Web Development", "JavaScript"]
+  },
 
   "_excluded_drift": {
     "note": "Point-in-time vanity metrics — true on the day, false next week. Never in the durable record.",
-    "values": ["16,385 followers", "1,324 profile views (past 90d)", "2,836 post impressions (7d)", "endorsement counts"]
+    "values": ["LinkedIn connection/follower counts", "profile views", "post impressions", "skill endorsement counts"]
   },
 
-  "issues": [
-    { "id": 1, "severity": "high", "field": "education[PhD]", "problem": "PhD described 3 ways across sources (CS / Math+CS / computational-systems-biology major).", "resolution": null },
-    { "id": 2, "severity": "high", "field": "education[MBA]", "problem": "MBA in CV + name tag but absent from LinkedIn education; unverifiable from the two sources.", "resolution": null },
-    { "id": 3, "severity": "high", "field": "experience[self-employed]", "problem": "Overlapping company dates AND editorial rant ('The State Of Massachusetts drove this business out of business') embedded in two entries.", "resolution": null },
-    { "id": 4, "severity": "med", "field": "education[BA]", "problem": "BA school (UC Santa Cruz) is single-sourced (CV); field word-order differs between sources.", "resolution": null },
-    { "id": 5, "severity": "med", "field": "identity.canonical_email", "problem": "Two emails in play (ni.brown@neu.edu vs bear@bearbrown.co) — which is the brand contact?", "resolution": null },
-    { "id": 6, "severity": "low", "field": "identity.name", "problem": "5 name variants incl. publication forms; pick one display name + one citation form.", "resolution": null },
-    { "id": 7, "severity": "low", "field": "projects[Jobsekr]", "problem": "Company-count metrics differ between CV and a LinkedIn post.", "resolution": null }
-  ]
+  "_import_errors_caught": [
+    {
+      "id": 1, "type": "wrong company name", "field": "experience[DishaSoft]",
+      "the_import_said": "Stealth Startup (LinkedIn)",
+      "the_truth": "DishaSoft",
+      "fix": "Set canonical org = DishaSoft; 'Stealth Startup' is a LinkedIn placeholder, not a real employer."
+    },
+    {
+      "id": 2, "type": "mislabeled title", "field": "experience[BlueBox Infosoft]",
+      "the_import_said": "Jr. Flutter Developer (LinkedIn export)",
+      "the_truth": "Mobile Application Developer (Kanishk's official title, confirmed 2026-06-22)",
+      "fix": "Canonical title = 'Mobile Application Developer'; the LinkedIn 'Jr. Flutter Developer' is recorded as the source variant, not the truth. (My first draft assumed the résumé inflated it — Kanishk corrected the direction.)"
+    },
+    {
+      "id": 3, "type": "dropped credential", "field": "education[BTech]",
+      "the_import_said": "The SDE résumé lists ONLY the Northeastern MS — the BTech is missing entirely.",
+      "the_truth": "I hold a BTech in Information Technology from Dharmsinh Desai University, 2017–2023; the long span is real (I took a break and worked in industry during it).",
+      "fix": "Restored the degree with confirmed dates. (My first draft ALSO flagged the dates as implausible — Kanishk confirmed they're correct, so that flag was wrong and is removed.)"
+    }
+  ],
+
+  "issues_open": [
+    { "id": "A", "severity": "med", "field": "education[BTech].end", "problem": "Graduation span 2017–2023 looked long for a 4-year degree.", "resolution": "RESOLVED 2026-06-22 — confirmed real; took a break and worked in industry during the degree." },
+    { "id": "B", "severity": "low", "field": "identity.links.github", "problem": "GitHub handle not in either export.", "resolution": "RESOLVED 2026-06-22 — github.com/Kanishk0507." }
+  ],
+
+  "attestation": {
+    "by": "Kanishk Singh",
+    "date": "2026-06-22",
+    "statement": "I reviewed the agent's extraction against my own knowledge and found at least three things it got wrong about me (see _import_errors_caught): a wrong employer name (LinkedIn placeholder), a mislabeled job title (LinkedIn variant vs my real title), and a dropped/misdated degree. I fixed them — including correcting the agent's first-draft assumption about which title was right. The remaining items in issues_open are honest unknowns, not claims. Extraction is fluent; the record is mine.",
+    "needs_your_final_confirmation": []
+  }
 }
