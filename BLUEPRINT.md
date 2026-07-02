@@ -1,11 +1,11 @@
 # Madison Recipe Engine
-## Tik TOC Architecture
+## Blueprint Architecture
 
 **Working title:** Madison Recipe Engine: Verified Brand Workflows for Branding and Advertising Practitioners  
 **Repository:** `books/madison`  
 **Book track:** proposed top-level `chapters/`, mirroring `books/the-reallocation-engine/chapters/`  
 **Source adaptation:** Existing Madison repository, current Madison chapters, the attached entry/mid-level branding-advertising recipe research, and the "Irreducibly Human" TOC structure  
-**Document:** Full TIKTOC architecture for chapter planning, manuscript repair, and production sequencing  
+**Document:** Full BLUEPRINT architecture for chapter planning, manuscript repair, and production sequencing  
 **Status:** Architecture rewrite for practitioner-guide direction  
 
 ---
@@ -195,7 +195,7 @@ By the end of the book, the reader can:
 
 # Part 4 - Repository-Specific Grounding
 
-This TIKTOC is grounded in `books/madison` as it exists now.
+This BLUEPRINT is grounded in `books/madison` as it exists now.
 
 ## Constitution and Domain Layer
 
@@ -254,7 +254,7 @@ The current repository contains several chapter tracks:
 - `chapters/branding-and-ai/` with Creative Engineer / brand-system chapters;
 - `chapters/principles-marketing/` with broader marketing chapters.
 
-This TIKTOC proposes a new top-level practitioner-guide structure that mirrors `the-reallocation-engine/chapters/`. Existing `branding-and-ai` and course chapters become source material, not the target structure.
+This BLUEPRINT proposes a new top-level practitioner-guide structure that mirrors `the-reallocation-engine/chapters/`. Existing `branding-and-ai` and course chapters become source material, not the target structure.
 
 ---
 
@@ -818,7 +818,7 @@ These may appear as boundaries, risks, or gates, but they are not the book's tea
 | Agency readers find examples too academic | Practitioner adoption risk | Use realistic account, brief, traffic, client, and campaign scenarios |
 | Course readers lack data access | Recipes may feel abstract | Provide sample datasets and simulated runs |
 | Tool details age quickly | Platform churn | Teach recipe structure rather than tool UI |
-| Existing Madison chapters do not match new structure | Manuscript repair needed | Use this TIKTOC as the restructure map |
+| Existing Madison chapters do not match new structure | Manuscript repair needed | Use this BLUEPRINT as the restructure map |
 | Recipe status overstates maturity | Violates MYCROFT | Cite logs and lifecycle status honestly |
 
 ---
