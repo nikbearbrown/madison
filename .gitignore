@@ -27,3 +27,5 @@ brand/private-reflection.md
 scripts/madison-main/
 docs/madison-main/
 data/madison-main/
+# Reference pantries are local-only; never publish them.
+**/[Pp][Aa][Nn][Tt][Rr][Yy]/
